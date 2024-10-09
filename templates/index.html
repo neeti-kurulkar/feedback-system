@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Feedback System</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback System</h1>
+        <form id="feedbackForm" action="/submit_feedback" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Feedback" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <h2>Previous Feedbacks</h2>
+        <ul id="feedbackList">
+            {% for feedback in feedbacks %}
+                <li>
+                    <strong>{{ feedback[1] }}</strong> ({{ feedback[2] }}): {{ feedback[3] }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Python
+*.pyc
+__pycache__/
+env/
+myenv/
+
+# Environment variables
+*.env
+
+# Generated Files
+feedback.db
+
+# Editor directories
+.idea/
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
